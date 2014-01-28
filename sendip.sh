@@ -7,7 +7,7 @@ while true; do
     newip=`lynx --dump http://ipecho.net/plain | grep .`
     if [[ $newip != $oldip ]]; then
         echo `date`":$newip" >> myips
-        rsync myips mi:~/piip.txt
+        rsync -z myips mi:~/piip.txt
         echo `date`" sendet new IP: $newip"
         oldip=$newip
     fi
