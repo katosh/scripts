@@ -214,13 +214,13 @@ def main(argv):
     if len(sys.argv) < 2:
         print "Usage: bitly.py '[url]'"
         return 1
-    print ''
+    #print ''
     if not API_USERNAME or not API_KEY:
         print 'API_USERNAME and API_KEY must be set.'
         return 1
 
     shortUrl = Api(login=API_USERNAME, apikey=API_KEY).shorten(sys.argv[1])
-    print 'Short URL: ' + shortUrl
+    print shortUrl
     return 0
 
 if __name__ == '__main__':
