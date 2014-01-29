@@ -4,9 +4,9 @@ oldip=''
 touch myips
 
 while true; do
-    newip=`lynx --dump http://ipecho.net/plain | grep .`
+    newip=`lynx --dump http://ipecho.net/plain | grep . | tr -d ' '`
     if [[ $newip != $oldip ]]; then
-        echo `date`":$newip" >> myips
+        echo `date`": $newip" >> myips
         rsync -z myips mi:~/piip.txt
         rsync -z myips zedat:~/public_html/piip.txt
         echo `date`" sended new IP: $newip"
