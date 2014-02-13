@@ -15,7 +15,7 @@ while true; do
             echo $newip > mylastip
             rsync -z mylastip zedat:~/public_html/piip.txt
         fi
-        echo `date`" sended new IP: $newip"
+        #echo `date`" sended new IP: $newip"
         oldip=$newip
     fi
     sleep 10m
