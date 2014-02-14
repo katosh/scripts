@@ -14,7 +14,7 @@
 case "$1" in
     start)
         echo "Starting ipsending"
-        /home/pi/Scripts/sendip.sh &
+        su pi /home/pi/Scripts/sendip.sh &
         ;;
     stop)
         echo "Stopping ipsending"
